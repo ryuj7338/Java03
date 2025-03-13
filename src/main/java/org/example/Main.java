@@ -1,40 +1,61 @@
 package org.example;
 
-// 문제 : 정수 i가 가지고 있는 10을 double 형 변수에 넣고 해당 변수의 값을 다시 i에 넣는 코드를 작성해주세요.
-
-//class Main {
-//    public static void main(String[] args) {
-//        int i = 10;
-//        double d = i; // 여기선 자동형변환 허용
-//        i = (int)d; // 여기선 자동형변환 불가능
-//        System.out.println(i);
-//        System.out.println(d);
-//        System.out.println(i);
-//    }
-//}
-
-// 문제 : 자동차 리모콘이 페라리 객체를 가리키게 한 후 해당 리모콘이 가리키고 있는 객체를 다시 페라리 리모콘으로 가리키게(참조하게) 하는 코드를 작성해주세요.
-
-class Main {
+// 많이 중요!!!!!!!
+//올바른 리턴타입으로 메서드를 만들어주세요
+public class Main {
     public static void main(String[] args) {
-        // 수정가능지역 시작
-        자동차 a자동차 = new 페라리();
+        int i = 로봇.get정수();
+        boolean b = 로봇.get논리();
+        사람 a사람 = 로봇.get사람();
+        사람 a사람2 = 로봇.get사람2();
+        사람 a사람3 = 로봇.get사람3();
+        사람 a사람4 = 로봇.get사람4();
+        사람 a사람5 = 로봇.get사람5(123,false);
+        로봇.get사람6(123,false);
 
-        페라리 a페라리 = (페라리)a자동차;
-
-//        a페라리.달리다();
-//        a페라리.서다();
-//        a페라리.뚜껑이_열리다();
-
-
-
-        // 수정가능지역 끝
     }
+
+
 }
-class 자동차 {
-    void 달리다() {}
-    void 서다() {}
+class 로봇 {
+  static int get정수() {
+      return 0;
+  }
+  static boolean get논리() {
+      return true;
+  }
+  static 사람 get사람() {
+      return null;
+  }
+    static 사람 get사람2() {
+        return new 사람();
+    }
+    static 사람 get사람3() {
+      사람 a사람 = null;
+      return a사람;
+    }
+    static 사람 get사람4() {
+        사람 a사람 = null;
+        return a사람;
+    }
+    static 사람 get사람5(int 학번, boolean 출결) {
+        사람 a사람 = new 사람();
+        a사람.학번();
+        a사람.출결();
+
+        return a사람;
+    }
+    static void get사람6(int 학번, boolean 출결) {
+
+    }
+
+
+
+
+
 }
-class 페라리 extends 자동차 {
-    void 뚜껑이_열리다() {}
+class 사람 {
+    int 학번;
+    boolean 출결;
+
 }
