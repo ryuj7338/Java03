@@ -1,8 +1,30 @@
 package org.example;
 
+// 문제 : 아래가 실행되도록 해주세요.
 
-//// 문제 : 아래가 실행되도록 해주세요.
+//class Main {
+//    public static void main(String[] args) {
+//        사람 a사람 = new 사람();
 //
+//        a사람.나이 = 20;
+//        a사람.a왼팔 = new 팔();
+//    }
+//}
+//
+//class 사람 {
+//    // 클래스안에 변수를 정의 할 수 있다.
+//    int 나이;
+//    팔 a왼팔;
+//}
+//class 팔 {
+//
+//
+//
+//}
+
+
+// 문제 : 아래가 실행되도록 해주세요.
+
 //class Main {
 //    public static void main(String[] args) {
 //        전사 a전사 = new 전사();
@@ -27,7 +49,7 @@ package org.example;
 //
 //}
 
-// 문제 : 아래가 실행되도록 해주세요.
+//문제 : 아래가 실행되도록 해주세요. (매개변수 활용한 버전)
 
 //class Main {
 //    public static void main(String[] args) {
@@ -68,29 +90,29 @@ package org.example;
 //    }
 //    void 공격(){
 //
-//        this.a무기.사용(this.이름);
+//        a무기.사용(this.이름);
 //
 //
 //    }
 //}
 //
 //class 무기 {
-//    void 사용(String 이름) {
+//    void 사용(String 공격자_이름) {
 //
 //    }
 //
 //}
 //
 //class 칼 extends 무기 {
-//    void 사용(String 이름) {
-//        System.out.println(이름 + "가 칼로 공격합니다.");
+//    void 사용(String 공격자_이름) {
+//        System.out.println(공격자_이름 +"가 칼로 공격합니다.");
 //    }
 //
 //}
 //
 //class 활 extends 무기 {
-//    void 사용(String 이름) {
-//        System.out.println(이름 + "가 활로 공격합니다.");
+//    void 사용(String 공격자_이름) {
+//        System.out.println(공격자_이름 +"가 활로 공격합니다.");
 //    }
 //
 //}
@@ -135,27 +157,28 @@ class 전사 {
     }
     void 공격(){
         a무기.사용자명 = 이름;
-        a무기.사용();
+
+        a무기.작동();
     }
 }
 
 class 무기{
     String 사용자명;
 
-    void 사용(){
+    void 작동(){
 
     }
 
 }
 class 칼 extends 무기{
-    void 사용() {
-        System.out.println(this.사용자명+ "이 칼로 공격합니다.");
+    void 작동() {
+        System.out.println(사용자명+ "이 칼로 공격합니다.");
     }
 
 }
 
 class 활 extends 무기{
-    void 사용() {
-        System.out.println(this.사용자명 + "이 활로 공격합니다.");
+    void 작동() {
+        System.out.println( 사용자명+ "이 활로 공격합니다.");
     }
 }
