@@ -1,184 +1,51 @@
 package org.example;
 
-// 문제 : 아래가 실행되도록 해주세요.
-
-//class Main {
-//    public static void main(String[] args) {
-//        사람 a사람 = new 사람();
-//
-//        a사람.나이 = 20;
-//        a사람.a왼팔 = new 팔();
-//    }
-//}
-//
-//class 사람 {
-//    // 클래스안에 변수를 정의 할 수 있다.
-//    int 나이;
-//    팔 a왼팔;
-//}
-//class 팔 {
-//
-//
-//
-//}
-
-
-// 문제 : 아래가 실행되도록 해주세요.
-
-//class Main {
-//    public static void main(String[] args) {
-//        전사 a전사 = new 전사();
-//
-//        a전사.나이 = 20;
-//        a전사.a무기 = new 활();
-//        a전사.a무기 = new 칼();
-//    }
-//}
-//class 전사 {
-//    int 나이;
-//    무기 a무기;
-//
-//}
-//class 무기 {
-//
-//}
-//class 활 extends 무기 {
-//
-//}
-//class 칼 extends 무기 {
-//
-//}
-
-//문제 : 아래가 실행되도록 해주세요. (매개변수 활용한 버전)
-
-//class Main {
-//    public static void main(String[] args) {
-//        전사 a전사 = new 전사();
-//
-//        String 이름 = "칸";
-//        a전사.이름 = 이름;
-//        a전사.나이 = 20;
-//        a전사.자기소개();
-//
-//        a전사.나이++;
-//        a전사.자기소개();
-//
-//        a전사.나이 = 30;
-//        a전사.이름 = "카니";
-//        a전사.자기소개();
-//
-//        a전사.a무기 = new 활();
-//        a전사.공격();
-//        // 출력 : 카니가 활로 공격합니다.
-//
-//        a전사.a무기 = new 칼();
-//        a전사.공격();
-//        // 출력 : 카니가 칼로 공격합니다.
-//    }
-//}
-//
-//class 전사 {
-//    // 인스턴스 변수
-//    String 이름;
-//    // 인스턴스 변수
-//    int 나이;
-//    // 인스턴스 변수
-//    무기 a무기;
-//
-//    void 자기소개() {
-//        System.out.println("안녕하세요. 저는 " + this.나이 + "살 " + this.이름 + " 입니다.");
-//    }
-//    void 공격(){
-//
-//        a무기.사용(this.이름);
-//
-//
-//    }
-//}
-//
-//class 무기 {
-//    void 사용(String 공격자_이름) {
-//
-//    }
-//
-//}
-//
-//class 칼 extends 무기 {
-//    void 사용(String 공격자_이름) {
-//        System.out.println(공격자_이름 +"가 칼로 공격합니다.");
-//    }
-//
-//}
-//
-//class 활 extends 무기 {
-//    void 사용(String 공격자_이름) {
-//        System.out.println(공격자_이름 +"가 활로 공격합니다.");
-//    }
-//
-//}
-
-
-// 아래의 코드가 실행되도록 해주세요
 
 public class Main {
     public static void main(String[] args) {
-        전사 a전사 = new 전사();
+        사람 사람1 = new 김철수("김철수2");
+//        사람1.이름 = "김철수";
+//        사람1.나이 = 22;
+//        사람1.나이를_22로_설정();
+        System.out.println("==사람1 정보==");
+        System.out.printf("이름 : %s\n",사람1.이름); // 김철수
+        System.out.printf("나이 : %d\n",사람1.나이); // 22
 
-        String 이름 = "칸";
-        a전사.이름 = 이름;
-        a전사.나이 = 20;
-        a전사.자기소개();
+        사람 사람2 =new 사람();
+        사람2.이름 = "이영희";
+ //       사람2.나이 = 33;
+ //       사람2.나이를_22로_설정();
+        System.out.println("==사람2 정보==");
+        System.out.printf("이름 : %s\n",사람2.이름); // 이영희
+        System.out.printf("나이 : %d\n",사람2.나이); // 33
 
-        a전사.나이++;
-        a전사.자기소개();
 
-        a전사.나이 = 30;
-        a전사.이름 = "진";
-        a전사.자기소개();
-
-        a전사.a무기 = new 활();
-        a전사.공격();
-        //출력 : 진이 활로 공격합니다.
-
-        a전사.a무기 = new 칼();
-        a전사.공격();
-        //출력 : 진이 칼로 공격합니다.
     }
 }
 
-class 전사 {
-    //인스턴스 변수
+class 사람 {
     String 이름;
     int 나이;
-    무기 a무기;
 
-    void 자기소개(){
-        System.out.println("안녕하세요. 저는 " + this.나이 + "살 " + this.이름 + " 입니다.");
+//    void 나이를_22로_저장(){    // 수동
+//        this.나이 = 22;
+//    }
+
+    사람(){   // 자동
+        System.out.println("사람 생성자 실행됨");   // 부모 생성자와 자식 생성자 둘 다 실행함수가 있다면 부모 생성자 먼저 실행
+        this.나이 = 22;
     }
-    void 공격(){
-        a무기.사용자명 = 이름;
 
-        a무기.작동();
-    }
-}
-
-class 무기{
-    String 사용자명;
-
-    void 작동(){
-
-    }
 
 }
-class 칼 extends 무기{
-    void 작동() {
-        System.out.println(사용자명+ "이 칼로 공격합니다.");
+class 김철수 extends 사람 {
+    김철수() {
+        System.out.println("김철수 생성자 실행됨");
+        this.이름 = "김철수";
     }
 
-}
-
-class 활 extends 무기{
-    void 작동() {
-        System.out.println( 사용자명+ "이 활로 공격합니다.");
+    김철수(String 이름) {
+        System.out.println("김철수2 생성자 실행됨");
+        this.이름 = "김철수2";
     }
 }
