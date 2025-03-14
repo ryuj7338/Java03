@@ -1,51 +1,48 @@
 package org.example;
 
+// stactic은 클래스 변수 , 모든 인스터스와 공유, 객체 생성과 무관하다.
+// this() -> 다른 생성자 호출(실행), Constructor call
 
 public class Main {
     public static void main(String[] args) {
-        사람 사람1 = new 김철수("김철수2");
-//        사람1.이름 = "김철수";
-//        사람1.나이 = 22;
-//        사람1.나이를_22로_설정();
-        System.out.println("==사람1 정보==");
-        System.out.printf("이름 : %s\n",사람1.이름); // 김철수
-        System.out.printf("나이 : %d\n",사람1.나이); // 22
 
-        사람 사람2 = new 사람(); // new사람(); - 기본 생성자
-        사람2.이름 = "이영희";
- //       사람2.나이 = 33;
- //       사람2.나이를_22로_설정();
-        System.out.println("==사람2 정보==");
-        System.out.printf("이름 : %s\n",사람2.이름); // 이영희
-        System.out.printf("나이 : %d\n",사람2.나이); // 33
+        int[] arr = new int[10];
 
+        Article[] articles = new Article[10];
 
+        Article article1 = new Article();
+        articles[0] = article1;
+
+        Article article2 = new Article();
+        articles[1] = article2;
+
+        System.out.println(articles[0].id);
+        System.out.println(articles[1].id);
+
+        System.out.println(article1.id);
+        System.out.println(article2.id);
     }
 }
 
-class 사람 {
-    String 이름;
-    int 나이;
+class Article {
+    static int lastId;
 
-//    void 나이를_22로_저장(){    // 수동
-//        this.나이 = 22;
-//    }
+    int id;
+    String regDate;
 
-    사람(){   // 자동
-        System.out.println("사람 생성자 실행됨");   // 부모 생성자와 자식 생성자 둘 다 실행함수가 있다면 부모 생성자 먼저 실행
-        this.나이 = 22;
+    static {
+        lastId = 0;
     }
 
-
-}
-class 김철수 extends 사람 {
-    김철수() {
-        System.out.println("김철수 생성자 실행됨");
-        this.이름 = "김철수";
+    Article() {
+        this(lastId + 1, "2025-12-12 12:12:12"); // 다른 생성자 호출(실행), Constructor Call
+        lastId++;
     }
 
-    김철수(String 이름) {
-        System.out.println("김철수2 생성자 실행됨");
-        this.이름 = "김철수2";
+    Article(int id, String regDate) {
+        this.id = id;
+        this.regDate = regDate;
     }
 }
+
+
