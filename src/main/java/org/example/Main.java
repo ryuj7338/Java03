@@ -1,28 +1,39 @@
 package org.example;
 
-// == : 주소값 비교
-// equals : String(참조타입)에서 사용
+// 키워드 - Object클래스, toString()
 
 public class Main {
     public static void main(String[] args) {
+        사람 a사람1 = new 사람("김철수", 22);
+        사람 a사람2 = new 사람("홍길동", 33);
 
-        String s1 = "하";
-        s1 += "하";
+        System.out.println(a사람1);
+        System.out.printf("이름 : %s, 나이 : %d\n", a사람1.name, a사람1.age);
+        System.out.println(a사람2);
+        System.out.printf("이름 : %s, 나이 : %d\n", a사람2.name, a사람2.age);
 
-        String s2 = "하하";
-
-        System.out.println(s1);
-        System.out.println(s2);
-
-        System.out.println(s1 == s2);   // 연산자에 의한 비교 / 기본타입 비교는 가능 , 객체끼리 비교는 불가능
-        System.out.println(s1.equals(s2));  // equals라는 함수에 의한 비교(동등성 비교)   , 객체끼리 비교할떄 사용
-
-//        char c = '하';
-//
-//        char cc = 'a';
-//        cc = 'b';
-//
-//        String ss = "abc";  //  힙영역 -> abc
     }
 }
+class 사람 extends Object {
+    String name;
+    int age;
+
+    @Override
+    public String toString() {
+        return "사람{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+
+    사람(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+
+}
+
 
