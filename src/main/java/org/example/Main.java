@@ -8,15 +8,20 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        long A, B, C;
+        int A, B;
 
-        A = sc.nextLong();
-        B = sc.nextLong();
-        C = sc.nextLong();
+        A = sc.nextInt();
+        B = sc.nextInt();
 
-
-        System.out.println(A+B+C);
-
+        if(A>B) {
+            System.out.println(">");
+        }
+        if (A<B) {
+            System.out.println("<");
+        }
+        if (A == B) {
+            System.out.println("==");
+        }
     }
 }
 
