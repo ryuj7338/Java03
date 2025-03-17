@@ -8,17 +8,14 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int A, B, C;
+        long A, B, C;
 
-        A = sc.nextInt();
-        B = sc.nextInt();
-        C = sc.nextInt();
+        A = sc.nextLong();
+        B = sc.nextLong();
+        C = sc.nextLong();
 
-        System.out.println((A+B)%C);
-        System.out.println(((A%C) + (B%C))%C);
-        System.out.println((A*B)%C);
-        System.out.println(((A%C) * (B%C))%C);
 
+        System.out.println(A+B+C);
 
     }
 }
