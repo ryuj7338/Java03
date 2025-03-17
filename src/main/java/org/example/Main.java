@@ -1,6 +1,5 @@
 package org.example;
 
-// 키워드 - Object클래스, toString()
 
 import java.util.Scanner;
 
@@ -9,11 +8,17 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int y;
+        int A, B, C;
 
-        y = sc.nextInt();
+        A = sc.nextInt();
+        B = sc.nextInt();
+        C = sc.nextInt();
 
-        System.out.println(y-544);
+        System.out.println((A+B)%C);
+        System.out.println(((A%C) + (B%C))%C);
+        System.out.println((A*B)%C);
+        System.out.println(((A%C) * (B%C))%C);
+
 
     }
 }
