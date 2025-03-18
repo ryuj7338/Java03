@@ -8,22 +8,15 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        int A, B;
+        String[] input = sc.nextLine().split(" ");
 
-        A = sc.nextInt();
-        B = sc.nextInt();
 
-        if(A>B) {
-            System.out.println(">");
-        }
-        if (A<B) {
-            System.out.println("<");
-        }
-        if (A == B) {
-            System.out.println("==");
-        }
+        long a = Long.parseLong(input[0]);
+        long b = Long.parseLong(input[1]);
+        long c = Long.parseLong(input[2]);
+
+
+        System.out.println(a+b+c);
+
     }
 }
-
-
-
